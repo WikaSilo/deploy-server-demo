@@ -1,4 +1,5 @@
-require('dotenv').config()
+if(process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) require('dotenv').config()
+
 const express = require('express')
 const mongoose = require('mongoose')
 const morgan = require('morgan')
@@ -9,8 +10,8 @@ const port = process.env.PORT || 3000
 
 // connect mongodb - atlas
 mongoose.connect(`${process.env.ATLAS_CONNECT}`, { useNewUrlParser: true }, function(err) {
-  if(err) console.log('database connection failed')
-  else console.log('database connection success')
+  if(err) console.log('MONGODB-ATLAS: database connection failed')
+  else console.log('MONGODB-ATLAS: database connection success')
 })
 
 // initial middlewares

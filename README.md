@@ -8,18 +8,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon app.js",
-    "start": "node app.js",
+    "dev": "NODE_ENV=development nodemon app.js",
+    "start": "NODE_ENV=production node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^8.0.0",
     "express": "^4.16.4",
     "mongoose": "^5.5.6",
     "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "dotenv": "^8.0.0"
   }
 }
 
@@ -27,7 +29,7 @@
 
 ## Documetation
 1. `git clone` this repo
-2. `cd express-demo`
+2. `cd deploy-server-demo`
 3. `npm install`
 4. export PORT=<your_port>
 5. export ATLAS_PASSWORD=<your_password>
